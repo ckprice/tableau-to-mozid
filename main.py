@@ -94,7 +94,7 @@ class ProcessPage(webapp2.RequestHandler):
             try:
                 dt = time.strptime(row[key_pos+1], "%B  %d, %Y")
                 week_date_string = time.strftime("%Y-%m-%d", dt)
-                return_json += add_comma + '{"wkcommencing": "' + week_date_string + '","totalactive":' + row[key_pos+3] + ',"new": ' +  row[key_pos+2] + '}'
+                return_json += add_comma + '{"wkcommencing":"' + week_date_string + '","totalactive":' + row[key_pos+3] + ',"new":' +  row[key_pos+2] + '}'
                 i += 1
             except ValueError:
                 continue
