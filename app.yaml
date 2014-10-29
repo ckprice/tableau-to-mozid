@@ -7,6 +7,9 @@ threadsafe: true
 handlers:
 - url: /static
   static_dir: static
+- url: /payload
+  static_dir: payload
+  mime_type: application/json
 
 - url: /.*
   script: main.application
