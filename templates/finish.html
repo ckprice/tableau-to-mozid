@@ -34,6 +34,10 @@
       h1, .glyph, body, p, .mono  {
         font-family: 'Fira Sans';
       }
+      .result-json{
+        padding:20px;
+        font-family:courier;
+      }
     </style>
   </head>
 
@@ -62,29 +66,27 @@
 
       <div class="starter-template">
         <h1>Baloo to MozID</h1>
-        <p class="lead">This utility is used to convert data from the Tableau Baloo repository. Go to the dataviz links provided for each file input, and download the indicated CSV using the icon at the bottom of the page</p>
+        <p class="lead">Files are processed!</p>
         <p>
           <a href-="https://bugzilla.mozilla.org/show_bug.cgi?id=1087053">Bugzilla</a> | <a href-="https://github.com/ckprice/tableau-to-mozid">Github</a> | <a href-="https://wiki.mozilla.org/Engagement/Campaigns/Mozilla_Identity_Evolution">Wiki</a>
         </p>
       </div>
-      <form role="form" action="/process" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-          <label for="teamsFile">Teams File</label>
-          <input type="file" id="teamsFile" name="teamsFile">
-          <p class="help-block"><a href="https://dataviz.mozilla.org/views/Active_Contributor_Dashboard/nums_team#1" target="_blank">dataviz</a> - this will produce the data sources for: Sumo, Reps, QA, Firefox OS, Firefox for Android, Firefox</p>
-        </div>
-        <div class="form-group">
-          <label for="sourceFile">Source File</label>
-          <input type="file" id="sourceFile" name="sourceFile">
-          <p class="help-block"><a href="https://dataviz.mozilla.org/views/Active_Contributor_Dashboard/nums_source#1" target="_blank">dataviz</a> - this will produce the data sources for: bugzilla, github</p>
-        </div>
-        <div class="form-group">
-          <label for="totalFile">Total File</label>
-          <input type="file" id="totalFile" name="totalFile">
-          <p class="help-block"><a href="https://dataviz.mozilla.org/views/Active_Contributor_Dashboard/nums_total#1" target="_blank">dataviz</a> - this will produce the data sources for: all</p>
-        </div>
-        <button type="submit" class="btn btn-default">Process</button>
-      </form>
+
+      <div>
+        <h1>Results</h1>
+        {% for d in data %}
+          
+          <hr>
+          <div class="result-container">
+            <div class="result-title">
+              <h5>{{ d.1 }}</h5>
+            </div>
+            <div class="result-json">
+              {{ d.0 }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
 
     </div><!-- /.container -->
 

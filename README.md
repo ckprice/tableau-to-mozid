@@ -17,12 +17,15 @@ The temporary solution will be
 
 This bug covers creating the script in #2.
 
+This is hosted on GAE at http://booloo-mozid.appspot.com/
+
 # Source Data
 
 The source data we will be pull from is Tableau tabs
-https://dataviz.mozilla.org/views/Active_Contributor_Dashboard/nums_total#1
-https://dataviz.mozilla.org/views/Active_Contributor_Dashboard/nums_team#1
-https://dataviz.mozilla.org/views/Active_Contributor_Dashboard/nums_source#1
+
+1. https://dataviz.mozilla.org/views/Active_Contributor_Dashboard/nums_total#1
+2. https://dataviz.mozilla.org/views/Active_Contributor_Dashboard/nums_team#1
+3. https://dataviz.mozilla.org/views/Active_Contributor_Dashboard/nums_source#1
 
 There is a button at the bottom of the screen to allow you to export data.
 
