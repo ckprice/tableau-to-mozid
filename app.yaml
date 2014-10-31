@@ -10,6 +10,9 @@ handlers:
 - url: /payload
   static_dir: payload
   mime_type: application/json
+  http_headers:
+    Access-Control-Allow-Origin: '*'
+    access-control-allow-headers: X-Requested-With
 
 - url: /.*
   script: main.application
