@@ -38,15 +38,15 @@ class ProcessPage(webapp2.RequestHandler):
         # (source_file_list) 'github' --> github
         # (total_file_list) 'all' --> all
         final_data = []
-        final_data.append(self.transform_data(teams_file_list, 1, 'Sumo', 'sumo'))
-        final_data.append(self.transform_data(teams_file_list, 1, 'Reps', 'reps'))
-        final_data.append(self.transform_data(teams_file_list, 1, 'QA', 'qa'))
-        final_data.append(self.transform_data(teams_file_list, 1, 'Firefox OS', 'firefoxos'))
-        final_data.append(self.transform_data(teams_file_list, 1, 'Firefox For Android', 'firefoxforandroid'))
-        final_data.append(self.transform_data(teams_file_list, 1, 'Firefox', 'firefox'))
+        final_data.append(self.transform_data(teams_file_list, 0, 'Sumo', 'sumo'))
+        final_data.append(self.transform_data(teams_file_list, 0, 'Reps', 'reps'))
+        final_data.append(self.transform_data(teams_file_list, 0, 'QA', 'qa'))
+        final_data.append(self.transform_data(teams_file_list, 0, 'Firefox OS', 'firefoxos'))
+        final_data.append(self.transform_data(teams_file_list, 0, 'Firefox For Android', 'firefoxforandroid'))
+        final_data.append(self.transform_data(teams_file_list, 0, 'Firefox', 'firefox'))
         final_data.append(self.transform_data(source_file_list, 0, 'bugzilla', 'bugzilla'))
         final_data.append(self.transform_data(source_file_list, 0, 'github', 'github'))
-        final_data.append(self.transform_data(total_file_list, 0, 'NOKEY', 'all'))
+        final_data.append(self.transform_data(total_file_list, -1, 'NOKEY', 'all'))
 
         template_values = {
             'data':final_data,
